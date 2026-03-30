@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitchett House Interhouse Groups</title>
+    <style>
+        @page { size: A3 landscape; margin: 8mm; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 15px; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 3.5em; margin: 0; color: #1a1a1a; text-transform: uppercase; letter-spacing: 3px; border-bottom: 5px solid #000; display: inline-block; padding-bottom: 5px; }
+        
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 15px; max-width: 100%; }
+        
+        .house-card { background: white; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); overflow: hidden; display: flex; flex-direction: column; border: 2px solid #ddd; }
+        .house-title { color: white; padding: 15px; font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase; }
+        
+        /* House Theming */
+        .hammerheads .house-title { background-color: #2c3e50; } 
+        .tiger-sharks .house-title { background-color: #e67e22; } 
+        .megladons .house-title { background-color: #2980b9; }    
+        .great-whites .house-title { background-color: #7f8c8d; }  
+        
+        table { width: 100%; border-collapse: collapse; font-size: 1.05em; }
+        th { background: #f8f9fa; padding: 12px; text-align: left; border-bottom: 3px solid #ddd; font-weight: bold; }
+        td { padding: 6px 12px; border-bottom: 1px solid #eee; }
+        .year-col { width: 60px; text-align: center; font-weight: bold; background: #fdfdfd; border-left: 1px solid #eee; }
+        
+        tr:nth-child(even) { background-color: #fafafa; }
+        .leader { background-color: #fff9c4 !important; font-weight: bold; color: #d35400; }
+        
+        @media print {
+            body { background: white; padding: 0; }
+            .house-card { box-shadow: none; border: 2px solid #333; page-break-inside: avoid; }
+            .header h1 { color: black; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Fitchett House Interhouse</h1>
+    </div>
+
+    <div class="grid-container">
+        <div class="house-card hammerheads">
+            <div class="house-title">🔨 Hammerheads (Dom Parres)</div>
+            <table>
+                <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
+                <tbody>
+                    <tr><td>Dean Li</td><td class="year-col">9</td></tr>
+                    <tr><td>Hemi Noe</td><td class="year-col">9</td></tr>
+                    <tr><td>Maddox Murray</td><td class="year-col">9</td></tr>
+                    <tr><td>Mitchell Merritt</td><td class="year-col">9</td></tr>
+                    <tr><td>Oscar Zhu</td><td class="year-col">9</td></tr>
+                    <tr><td>Ryan Dong</td><td class="year-col">9</td></tr>
+                    <tr><td>Cooper Neill</td><td class="year-col">10</td></tr>
+                    <tr><td>Jed Sanders-Edwards</td><td class="year-col">10</td></tr>
+                    <tr><td>Tom Mathieson</td><td class="year-col">10</td></tr>
+                    <tr><td>Tom Savage</td><td class="year-col">10</td></tr>
+                    <tr><td>Charlie Baker</td><td class="year-col">11</td></tr>
+                    <tr><td>Fraser Grayling</td><td class="year-col">11</td></tr>
+                    <tr><td>Luke Reymer</td><td class="year-col">11</td></tr>
+                    <tr><td>McKay Murray</td><td class="year-col">11</td></tr>
+                    <tr><td>Raymond Li</td><td class="year-col">11</td></tr>
+                    <tr><td>Aneesh Sharma</td><td class="year-col">12</td></tr>
+                    <tr><td>Bohan Yao</td><td class="year-col">12</td></tr>
+                    <tr><td>Jayden Hollier</td><td class="year-col">12</td></tr>
+                    <tr><td>Leon Li</td><td class="year-col">12</td></tr>
+                    <tr><td>Mark Liao</td><td class="year-col">12</td></tr>
+                    <tr><td>Ryan Shi</td><td class="year-col">12</td></tr>
+                    <tr><td>Boston Griffiths</td><td class="year-col">13</td></tr>
+                    <tr class="leader"><td>Dominic Parres (Leader)</td><td class="year-col">13</td></tr>
+                    <tr><td>Fred McKenzie</td><td class="year-col">13</td></tr>
+                    <tr><td>Matteo Romano-le Roux</td><td class="year-col">13</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="house-card tiger-sharks">
+            <div class="house-title">🐅🦈 Tiger Sharks (Jackson Hay)</div>
+            <table>
+                <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
+                <tbody>
+                    <tr><td>Allen Niu</td><td class="year-col">9</td></tr>
+                    <tr><td>Henry Scherer</td><td class="year-col">9</td></tr>
+                    <tr><td>Jamie Barrett</td><td class="year-col">9</td></tr>
+                    <tr><td>Jasper Wong</td><td class="year-col">9</td></tr>
+                    <tr><td>Kyle Bussey</td><td class="year-col">9</td></tr>
+                    <tr><td>Sam McCarthy</td><td class="year-col">9</td></tr>
+                    <tr><td>Charlie Trollope</td><td class="year-col">10</td></tr>
+                    <tr><td>Fraser Dudin</td><td class="year-col">10</td></tr>
+                    <tr><td>Mitchell Pocock</td><td class="year-col">10</td></tr>
+                    <tr><td>Anurag Manda</td><td class="year-col">11</td></tr>
+                    <tr><td>Ben Jorgensen</td><td class="year-col">11</td></tr>
+                    <tr><td>Charlie Upston</td><td class="year-col">11</td></tr>
+                    <tr><td>Ethan Hu</td><td class="year-col">11</td></tr>
+                    <tr><td>Jamie Moss</td><td class="year-col">11</td></tr>
+                    <tr><td>Tony Qiu</td><td class="year-col">11</td></tr>
+                    <tr><td>Blayne Macdonald</td><td class="year-col">12</td></tr>
+                    <tr><td>Braedon Rogers</td><td class="year-col">12</td></tr>
+                    <tr><td>Garfield Trakarnsakdikul</td><td class="year-col">12</td></tr>
+                    <tr><td>Luke Rayner</td><td class="year-col">12</td></tr>
+                    <tr><td>Troy Poole</td><td class="year-col">12</td></tr>
+                    <tr class="leader"><td>Jackson Hay (Leader)</td><td class="year-col">13</td></tr>
+                    <tr><td>Jora Singh</td><td class="year-col">13</td></tr>
+                    <tr><td>Leyton Birch</td><td class="year-col">13</td></tr>
+                    <tr><td>Rhys Lumsden</td><td class="year-col">13</td></tr>
+                    <tr><td>Samson Arthur</td><td class="year-col">13</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="house-card megladons">
+            <div class="house-title">🌊 Megladons (John Park)</div>
+            <table>
+                <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
+                <tbody>
+                    <tr><td>Connor Giberson</td><td class="year-col">9</td></tr>
+                    <tr><td>Evan Hu</td><td class="year-col">9</td></tr>
+                    <tr><td>Jeongyeon Moon</td><td class="year-col">9</td></tr>
+                    <tr><td>Joey Wang</td><td class="year-col">9</td></tr>
+                    <tr><td>Jonathan Liang</td><td class="year-col">9</td></tr>
+                    <tr><td>Cooper Birch</td><td class="year-col">10</td></tr>
+                    <tr><td>James Stark</td><td class="year-col">10</td></tr>
+                    <tr><td>Joshen Yao</td><td class="year-col">10</td></tr>
+                    <tr><td>Ciaran Blank</td><td class="year-col">11</td></tr>
+                    <tr><td>Harry Trollope</td><td class="year-col">11</td></tr>
+                    <tr><td>Hayden Parkes</td><td class="year-col">11</td></tr>
+                    <tr><td>Jabez Packer</td><td class="year-col">11</td></tr>
+                    <tr><td>Kevin Chen</td><td class="year-col">11</td></tr>
+                    <tr><td>Lewis Brown</td><td class="year-col">11</td></tr>
+                    <tr><td>Charlie Giberson</td><td class="year-col">12</td></tr>
+                    <tr><td>Flynn Holten</td><td class="year-col">12</td></tr>
+                    <tr><td>JJ Nanthachaiporn</td><td class="year-col">12</td></tr>
+                    <tr><td>Quinn Smart</td><td class="year-col">12</td></tr>
+                    <tr><td>Srikar Jandhyala</td><td class="year-col">12</td></tr>
+                    <tr><td>Tobias Martynoga</td><td class="year-col">12</td></tr>
+                    <tr><td>Adi Manda</td><td class="year-col">13</td></tr>
+                    <tr><td>Carl Chogumaira</td><td class="year-col">13</td></tr>
+                    <tr><td>Hugh Trower</td><td class="year-col">13</td></tr>
+                    <tr class="leader"><td>John Park (Leader)</td><td class="year-col">13</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="house-card great-whites">
+            <div class="house-title">🦈 Great Whites (Rory Boynton)</div>
+            <table>
+                <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
+                <tbody>
+                    <tr><td>Akain Kuruppuge</td><td class="year-col">9</td></tr>
+                    <tr><td>Conrad Pocock</td><td class="year-col">9</td></tr>
+                    <tr><td>James Schuster</td><td class="year-col">9</td></tr>
+                    <tr><td>Lucas Richmond</td><td class="year-col">9</td></tr>
+                    <tr><td>Te Amotawa Steward</td><td class="year-col">9</td></tr>
+                    <tr><td>Flynn O'Reilly</td><td class="year-col">10</td></tr>
+                    <tr><td>Matai Lake</td><td class="year-col">10</td></tr>
+                    <tr><td>Rhys Philburn</td><td class="year-col">10</td></tr>
+                    <tr><td>Spencer Cox</td><td class="year-col">10</td></tr>
+                    <tr><td>Benji Von Blottnitz</td><td class="year-col">11</td></tr>
+                    <tr><td>Carter Hay</td><td class="year-col">11</td></tr>
+                    <tr><td>Connor Luxton</td><td class="year-col">11</td></tr>
+                    <tr><td>George McKenzie</td><td class="year-col">11</td></tr>
+                    <tr><td>Guy Johnstone</td><td class="year-col">11</td></tr>
+                    <tr><td>Jakob Greig-Dickie</td><td class="year-col">11</td></tr>
+                    <tr><td>James Jordan</td><td class="year-col">12</td></tr>
+                    <tr><td>Josh Bunce</td><td class="year-col">12</td></tr>
+                    <tr><td>Samuel Allen</td><td class="year-col">12</td></tr>
+                    <tr><td>Thomas Luxton</td><td class="year-col">12</td></tr>
+                    <tr><td>Zac Kovaleski</td><td class="year-col">12</td></tr>
+                    <tr><td>Nico Yorston</td><td class="year-col">13</td></tr>
+                    <tr><td>Reuben Hassell</td><td class="year-col">13</td></tr>
+                    <tr class="leader"><td>Rory Boynton (Leader)</td><td class="year-col">13</td></tr>
+                    <tr><td>Samuel Williams</td><td class="year-col">13</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
