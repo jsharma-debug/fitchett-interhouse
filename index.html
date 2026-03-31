@@ -2,117 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fitchett House Interhouse Groups 2026</title>
+    <title>Fitchett House Intra-House Competition 2026</title>
     <style>
         @page { size: A3 landscape; margin: 8mm; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 15px; }
+        body { font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #f8f9fc; margin: 0; padding: 20px; color: #2d3436; }
         
-        /* Header & Banner */
-        .header { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 40px; 
-            margin-bottom: 20px; 
-            padding: 10px;
-        }
-        .header img { height: 100px; width: auto; }
+        /* Header */
+        .header { text-align: center; margin-bottom: 30px; padding: 10px; }
         .header h1 { 
-            font-size: 3em; 
+            font-size: 3.5em; 
             margin: 0; 
-            color: #1a1a1a; 
+            color: #2d3436; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
+            letter-spacing: 4px;
+            font-weight: 800;
         }
 
-        /* Points Chart Styles */
-        .points-container {
-            max-width: 1000px;
-            margin: 0 auto 30px auto;
+        /* Leaderboard Dashboard */
+        .leaderboard {
+            max-width: 1100px;
+            margin: 0 auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .standing-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: center;
+            border-bottom: 5px solid #dfe6e9;
+            position: relative;
         }
-        .points-container h2 { margin-top: 0; text-transform: uppercase; color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .points-grid {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        .rank-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3436;
+            color: white;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
         }
-        .point-item { flex: 1; padding: 10px; }
-        .rank { font-size: 1.2em; font-weight: bold; color: #888; }
-        .point-name { font-size: 1.5em; font-weight: bold; margin: 5px 0; }
-        .point-val { font-size: 2em; font-weight: 900; }
+        .house-name { font-size: 1.2em; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; }
+        .points-total { font-size: 2.5em; font-weight: 900; }
+        .comp-label { font-size: 0.75em; text-transform: uppercase; color: #636e72; letter-spacing: 1px; margin-top: 5px; font-weight: bold;}
 
-        /* Group Colors for Points */
-        .c-hammer { color: #2c3e50; }
-        .c-tiger { color: #e67e22; }
-        .c-megla { color: #2980b9; }
-        .c-great { color: #7f8c8d; }
+        /* Standings Colors */
+        .s-hammer { border-color: #2c3e50; } .s-hammer .points-total { color: #2c3e50; }
+        .s-megla { border-color: #2980b9; } .s-megla .points-total { color: #2980b9; }
+        .s-great { border-color: #7f8c8d; } .s-great .points-total { color: #7f8c8d; }
+        .s-tiger { border-color: #e67e22; } .s-tiger .points-total { color: #e67e22; }
 
-        /* Grid & Cards */
-        .grid-container { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 15px; }
-        .house-card { background: white; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); overflow: hidden; border: 2px solid #ddd; }
-        .house-title { color: white; padding: 12px; font-size: 1.6em; font-weight: bold; text-align: center; text-transform: uppercase; }
+        /* Grid & House Cards */
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px; }
+        .house-card { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e1e8ed; }
+        .house-title { color: white; padding: 15px; font-size: 1.6em; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 1px;}
         
         .hammerheads .house-title { background-color: #2c3e50; } 
         .tiger-sharks .house-title { background-color: #e67e22; } 
         .megladons .house-title { background-color: #2980b9; }    
         .great-whites .house-title { background-color: #7f8c8d; }  
         
-        table { width: 100%; border-collapse: collapse; font-size: 1em; }
-        th { background: #f8f9fa; padding: 10px; text-align: left; border-bottom: 3px solid #ddd; }
-        td { padding: 5px 12px; border-bottom: 1px solid #eee; }
-        .year-col { width: 50px; text-align: center; font-weight: bold; background: #fdfdfd; border-left: 1px solid #eee; }
+        table { width: 100%; border-collapse: collapse; font-size: 1.05em; }
+        th { background: #fdfdfd; padding: 12px; text-align: left; border-bottom: 2px solid #edf2f7; color: #718096; font-size: 0.8em; text-transform: uppercase; }
+        td { padding: 7px 15px; border-bottom: 1px solid #f1f5f9; }
+        .year-col { width: 60px; text-align: center; font-weight: 800; color: #4a5568; background: #f8fafc; border-left: 1px solid #edf2f7; }
         
-        tr:nth-child(even) { background-color: #fafafa; }
-        .leader { background-color: #fff9c4 !important; font-weight: bold; color: #000; }
+        tr:nth-child(even) { background-color: #fcfdfe; }
+        .leader { background-color: #fffbeb !important; font-weight: bold; color: #b45309; }
         
         @media print {
             body { background: white; padding: 0; }
             .house-card { box-shadow: none; border: 2px solid #333; page-break-inside: avoid; }
-            .points-container { border: 2px solid #333; box-shadow: none; }
+            .standing-card { border: 2px solid #333; box-shadow: none; }
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="banner.png" alt="Fitchett House Banner">
-        <h1>Fitchett House Interhouse Groups 2026</h1>
+        <h1>Fitchett House Intra-House Competition 2026</h1>
     </div>
 
-    <div class="points-container">
-        <h2>Competition Standings: Dodgeball</h2>
-        <div class="points-grid">
-            <div class="point-item">
-                <div class="rank">1ST</div>
-                <div class="point-name c-hammer">Hammerheads</div>
-                <div class="point-val c-hammer">7 pts</div>
-            </div>
-            <div class="point-item" style="border-left: 1px solid #eee;">
-                <div class="rank">2ND</div>
-                <div class="point-name c-megla">Megladons</div>
-                <div class="point-val c-megla">6 pts</div>
-            </div>
-            <div class="point-item" style="border-left: 1px solid #eee;">
-                <div class="rank">3RD</div>
-                <div class="point-name c-great">Great Whites</div>
-                <div class="point-val c-great">5 pts</div>
-            </div>
-            <div class="point-item" style="border-left: 1px solid #eee;">
-                <div class="rank">4TH</div>
-                <div class="point-name c-tiger">Tiger Sharks</div>
-                <div class="point-val c-tiger">4 pts</div>
-            </div>
+    <div class="leaderboard">
+        <div class="standing-card s-hammer">
+            <div class="rank-badge">1ST PLACE</div>
+            <div class="house-name">Hammerheads</div>
+            <div class="points-total">7</div>
+            <div class="comp-label">Dodgeball (1st)</div>
+        </div>
+        <div class="standing-card s-megla">
+            <div class="rank-badge">2ND PLACE</div>
+            <div class="house-name">Megladons</div>
+            <div class="points-total">6</div>
+            <div class="comp-label">Dodgeball (2nd)</div>
+        </div>
+        <div class="standing-card s-great">
+            <div class="rank-badge">3RD PLACE</div>
+            <div class="house-name">Great Whites</div>
+            <div class="points-total">5</div>
+            <div class="comp-label">Dodgeball (3rd)</div>
+        </div>
+        <div class="standing-card s-tiger">
+            <div class="rank-badge">4TH PLACE</div>
+            <div class="house-name">Tiger Sharks</div>
+            <div class="points-total">4</div>
+            <div class="comp-label">Dodgeball (4th)</div>
         </div>
     </div>
 
     <div class="grid-container">
         <div class="house-card hammerheads">
-            <div class="house-title">🔨 Hammerheads (Dom Parres)</div>
+            <div class="house-title">🔨 Hammerheads</div>
             <table>
                 <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
                 <tbody>
@@ -146,7 +151,7 @@
         </div>
 
         <div class="house-card tiger-sharks">
-            <div class="house-title">🐅🦈 Tiger Sharks (Jackson Hay)</div>
+            <div class="house-title">🐅🦈 Tiger Sharks</div>
             <table>
                 <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
                 <tbody>
@@ -179,7 +184,7 @@
         </div>
 
         <div class="house-card megladons">
-            <div class="house-title">🌊 Megladons (John Park)</div>
+            <div class="house-title">🌊 Megladons</div>
             <table>
                 <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
                 <tbody>
@@ -212,7 +217,7 @@
         </div>
 
         <div class="house-card great-whites">
-            <div class="house-title">🦈 Great Whites (Rory Boynton)</div>
+            <div class="house-title">🦈 Great Whites</div>
             <table>
                 <thead><tr><th>Student Name</th><th class="year-col">Year</th></tr></thead>
                 <tbody>
